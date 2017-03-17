@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="default" extends="struts-default" namespace="/">
+
+	</package>
+
+	<package name="ajax" extends="json-default" namespace="/">
+		<action name="login" class="org.action.LoginAction" method="login">
+			<!-- 将返回类型设置为json -->
+			<result type="json">
+			</result>
+		</action>
+		<action name="changePw" class="org.action.LoginAction" method="changePw">
+			<!-- 将返回类型设置为json -->
+			<result type="json">
+			</result>
+		</action>
+		<action name="changePw1" class="org.action.LoginAction" method="changePw1">
+			<!-- 将返回类型设置为json -->
+			<result type="json">
+			</result>
+		</action>
+		<action name="register" class="org.action.RegisterAction"
+			method="register">
+			<!-- 将返回类型设置为json -->
+			<result type="json">
+			</result>
+		</action>
+		<action name="getCellInfo" class="org.action.CellAction"
+			method="getCellInfo">
+			<!-- 将返回类型设置为json -->
+			<result type="json">
+			</result>
+		</action>
+		<!-- AppMMange -->
+		<action name="AddTopic" class="org.action.AppMMange" method="AddTopic">
+			<!-- 将返回类型设置为json -->
+			<result type="json">
+			</result>
+		</action>
+		<action name="addComment" class="org.action.AppMMange" method="addComment">
+			<!-- 将返回类型设置为json -->
+			<result type="json">
+			</result>
+		</action>
+		<action name="AddReply" class="org.action.AppMMange" method="AddReply">
+			<!-- 将返回类型设置为json -->
+			<result type="json">
+			</result>
+		</action>
+		<action name="delTopic" class="org.action.AppMMange" method="delTopic">
+			<!-- 将返回类型设置为json -->
+			<result type="json">
+			</result>
+		</action>
+		<action name="delComment" class="org.action.AppMMange" method="delComment">
+			<!-- 将返回类型设置为json -->
+			<result type="json">
+			</result>
+		</action>
+		<action name="delReply" class="org.action.AppMMange" method="delReply">
+			<!-- 将返回类型设置为json -->
+			<result type="json">
+			</result>
+		</action>
+		<action name="getTopics1" class="org.action.AppMMange" method="getTopics1">			<!-- 获取用户列表 -->
+			<result type="json">
+			</result>
+		</action>
+		<action name="getComRep" class="org.action.AppMMange" method="getComRep">			<!-- 获取用户列表 -->
+			<result type="json">
+			</result>
+		</action>
+		<action name="searchByKey" class="org.action.AppMMange" method="searchByKey">			<!-- 获取用户列表 -->
+			<result type="json">
+			</result>
+		</action>
+		<action name="test1" class="org.action.AppMMange" method="test1">			<!-- 获取用户列表 -->
+			<result type="json">
+			</result>
+		</action>
+		<action name="CheckAlive" class="org.action.AppMMange" method="CheckAlive">			<!-- 获取用户列表 -->
+			<result type="json">
+			</result>
+		</action>
+		<action name="photoUp" class="org.action.PhotoAction" method="photoUp">
+			<result type="json">
+			</result>
+		</action>
+		<action name="detailInfo" class="org.action.DetailAction"
+			method="getDetailInfo">
+			<result type="json">
+			</result>
+		</action>
+		<action name="photoUp1" class="org.action.DetailAction" method="photoUp">
+			<result type="json">
+			</result>
+		</action>
+		<action name="photoUp2" class="org.action.DetailAction" method="photoUp">
+			<result type="json">
+			</result>
+		</action>
+		<action name="UpdateInfo" class="org.action.DetailAction"
+			method="UpdateInfo">
+			<result type="json">
+			</result>
+		</action>
+
+	</package>
+	<package name="global1" extends="json-default">
+		<interceptors>
+			<interceptor name="authority" class="org.filter.AuthInterceptor1" />
+			<interceptor-stack name="mydefault">
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="authority"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="mydefault" />
+		<global-results>
+			<result type="json" name="error">
+				<param name="root">result</param>
+			</result>
+		</global-results>
+	</package>
+
+	<package name="login1" extends="json-default" namespace="/">
+		<action name="loginWeb" class="org.action.UserAction" method="login">
+			<result type="json" name="success">
+				<param name="root">result</param>
+			</result>
+			<result type="json" name="error">
+				<param name="root">result</param>
+			</result>
+		</action>
+	</package>
+	<package name="backServer" extends="json-default" namespace="/">
+		<!-- UserAction -->
+		<!-- 获取用户总数 -->
+		<action name="userCount" class="org.action.UserAction" method="getUserCount">
+			<result type="json" name="success">
+				<param name="root">result</param>
+			</result>
+			<result type="json" name="error">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="userlist" class="org.action.UserAction">
+			<result type="json" name="success">
+				<param name="root">result</param>
+			</result>
+			<result type="json" name="error">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="addUser" class="org.action.UserAction" method="addUser">
+			<result type="json" name="success">
+				<param name="root">result</param>
+			</result>
+			<result type="json" name="error">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="addSuper" class="org.action.UserAction" method="addSuper">
+			<result type="json" name="success">
+				<param name="root">result</param>
+			</result>
+			<result type="json" name="error">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="searchUser" class="org.action.UserAction" method="searchUser">
+			<result type="json" name="success">
+				<param name="root">result</param>
+			</result>
+			<result type="json" name="error">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="Suserlist" class="org.action.UserAction" method="getSuperList">
+			<result type="json" name="success">
+				<param name="root">result</param>
+			</result>
+			<result type="json" name="error">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="delUser" class="org.action.UserAction" method="delUser">
+			<result type="json" name="success">
+				<param name="root">result</param>
+			</result>
+			<result type="json" name="error">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="delSuper" class="org.action.UserAction" method="delSuper">
+			<result type="json" name="success">
+				<param name="root">result</param>
+			</result>
+			<result type="json" name="error">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="editSuper" class="org.action.UserAction" method="editSuper">
+			<result type="json" name="success">
+				<param name="root">result</param>
+			</result>
+			<result type="json" name="error">
+				<param name="root">result</param>
+			</result>
+		</action>
+
+
+		<!-- ####################CellAction############################# -->
+		<!-- 获取数据总数 -->
+		<action name="getCount" class="org.action.CellAction" method="getCount">
+			<result type="json" name="success">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<!-- 获取总页数 -->
+		<action name="getPageCount" class="org.action.CellAction"
+			method="getPageCount">
+			<result type="json" name="success">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<!-- 获取所有罐体的历史记录 -->
+		<action name="getCellHistory" class="org.action.CellAction"
+			method="getCellHistory">
+			<result type="json" name="success">
+				<param name="root">result</param>
+			</result>
+			<result type="json" name="error">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<!-- 获取所有罐体的历史记录，不分页 -->
+		<action name="getCellHistory1" class="org.action.CellAction"
+			method="getCellHistory1">
+			<result type="json" name="success">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<!-- 删除单个item，传入参数itemid -->
+		<action name="deleteItem" class="org.action.CellAction" method="deleteItem">
+			<result type="json" name="success">
+				<param name="root">result</param>
+			</result>
+			<result type="json" name="error">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<!-- 删除所有选中的item数据，传入json数组或者itemids数组 -->
+		<action name="deleteItems" class="org.action.CellAction"
+			method="deleteItems">
+			<result type="json" name="success">
+				<param name="root">result</param>
+			</result>
+			<result type="json" name="error">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<!-- 用户存放了新细胞，需要添加细胞信息以及关联信息,传入参数phone,name细胞名,num细胞数,serial罐体序列号 -->
+		<action name="AddCell" class="org.action.CellAction" method="AddCell">
+			<result type="json" name="success">
+				<param name="root">result</param>
+			</result>
+			<result type="json" name="error">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<!-- 删除干细胞 -->
+		<action name="DelCell" class="org.action.CellAction" method="DelCell">
+			<result type="json" name="success">
+				<param name="root">result</param>
+			</result>
+			<result type="json" name="error">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<!-- 获取干细胞总数 -->
+		<action name="getCellCount" class="org.action.CellAction"
+			method="getCellCount">
+			<result type="json" name="success">
+				<param name="root">result</param>
+			</result>
+			<result type="json" name="error">
+				<param name="root">result</param>
+			</result>
+		</action>
+
+		<!-- 获取存储的所有干细胞列表 -->
+		<action name="getCellList" class="org.action.CellAction"
+			method="getCellList">
+			<result type="json" name="success">
+				<param name="root">result</param>
+			</result>
+			<result type="json" name="error">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<!-- 获取某段时间的历史记录，按月份来,传入两个时间字符串，起始和结束 -->
+		<action name="getHistoryByPeriod" class="org.action.CellAction"
+			method="getHistoryByPeriod">
+			<result type="json" name="success">
+				<param name="root">result</param>
+			</result>
+			<result type="json" name="error">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<!-- 删除某段时间内的历史记录，按月份为单位，传入两个时间字符串，起始和结束 -->
+		<action name="deleteHistoryByPeriod" class="org.action.CellAction"
+			method="deleteHistoryByPeriod">
+			<result type="json" name="success">
+				<param name="root">result</param>
+			</result>
+			<result type="json" name="error">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<!-- ####################CanAction############################# -->
+		<action name="getCanPage" class="org.action.CanAction" method="getCanPage">
+			<result type="json" name="success">
+				<param name="root">result</param>
+			</result>
+			<result type="json" name="error">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="getCanCount" class="org.action.CanAction" method="getCanCount">
+			<result type="json" name="success">
+				<param name="root">result</param>
+			</result>
+			<result type="json" name="error">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<!-- 获取罐体列表 -->
+		<action name="getCans" class="org.action.CanAction">
+			<result type="json" name="success">
+				<param name="root">result</param>
+			</result>
+			<result type="json" name="error">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<!-- 添加罐体信息 传入参数Serial，Address -->
+		<action name="addCan" class="org.action.CanAction" method="addCan">
+			<result type="json" name="success">
+				<param name="root">result</param>
+			</result> 
+			<result type="json" name="error">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<!-- 修改罐体信息 传入参数canid,Serial，Address -->
+		<action name="updateCan" class="org.action.CanAction" method="updateCan">
+			<result type="json" name="success">
+				<param name="root">result</param>
+			</result>
+			<result type="json" name="error">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<!-- 删除罐体 -->
+		<action name="delCan" class="org.action.CanAction" method="delCan">
+			<result type="json" name="success">
+				<param name="root">result</param>
+			</result>
+			<result type="json" name="error">
+				<param name="root">result</param>
+			</result>
+		</action>
+
+		<!-- #####################MMangeAction############################## -->
+		<!-- 显示所有的话题 -->
+		<action name="getAllInfo" class="org.action.MMangeAction">
+			<result type="json" name="success">
+				<param name="root">result</param>
+			</result>
+			<result type="json" name="error">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<!-- 点击话题查看评论 传入参数topicId -->
+		<action name="getCommentsByTopic" class="org.action.MMangeAction"
+			method="getCommentsByTopic">
+			<result type="json" name="success">
+				<param name="root">result</param>
+			</result>
+			<result type="json" name="error">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<!-- 点击评论查看回复 传入参数commentId -->
+		<action name="getReplysByComment" class="org.action.MMangeAction"
+			method="getReplysByComment">
+			<result type="json" name="success">
+				<param name="root">result</param>
+			</result>
+			<result type="json" name="error">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<!-- 删除话题 传入参数topicId -->
+		<action name="delTopic1" class="org.action.MMangeAction"
+			method="delTopic">
+			<result type="json" name="success">
+				<param name="root">result</param>
+			</result>
+			<result type="json" name="error">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<!-- 删除评论 传入参数commentId -->
+		<action name="delComment1" class="org.action.MMangeAction"
+			method="delComment">
+			<result type="json" name="success">
+				<param name="root">result</param>
+			</result>
+			<result type="json" name="error">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<!-- 删除回复 传入参数replyId -->
+		<action name="delReply1" class="org.action.MMangeAction"
+			method="delReply">
+			<result type="json" name="success">
+				<param name="root">result</param>
+			</result>
+			<result type="json" name="error">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="getComRep1" class="org.action.MMangeAction"
+			method="getComRep">
+			<result type="json" name="success">
+				<param name="root">result</param>
+			</result>
+			<result type="json" name="error">
+				<param name="root">result</param>
+			</result>
+		</action>
+	</package>
+
+
+</struts>

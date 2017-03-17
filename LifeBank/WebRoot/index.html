@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>万海生命银行app后台管理系统</title>
+	<link rel="stylesheet" type="text/css" href="date/css/htmleaf-demo.css"><!-- //时间选择器 -->
+	<link rel="stylesheet" href="date/css/dcalendar.picker.css"/> <!-- 时间选择器 -->
+	<link rel="stylesheet" href="assetsTb/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css"> <!-- 主题样式表 -->
+    <link rel="stylesheet" type="text/css" href="css/formStyle.css" /><!-- 所有表单样式表 -->
+    <link rel="stylesheet" href="css/TopicStyle.css">   <!-- 话题部分样式表 -->
+</head>
+<body>
+	<!-- 登录部分 -->
+	<div class="loginLoadingIndex">
+			<form id="loginForm"  class="slick-login loginForm">
+				<h2>请登录</h2>
+				<input type="text" name="username" placeholder="用户名">
+				<input type="password" name="password" placeholder="密码">
+				<a href="##" class="btn btn-info" id='loginBtn'>登录</a>
+			</form>		
+	</div>
+	<!-- loading部分 -->
+	<div class="loginLoadingIndex">
+		<div class="imgbg">
+			<div class="img"><img src="img/loading-2.gif" alt=""></div>
+		</div>
+	</div>
+	<div class="loginLoadingIndex">
+		<div class="row">
+			<div class="col-lg-2 col-md-3 col-sm-4 navBox" id='navBox'>
+				<div class="sliderBar">
+					<div class="header" id="sliderBar"><span class="glyphicon glyphicon-chevron-left" id="navHeader"></div>
+					<div class="sliderItems Aactive"><span class="glyphicon glyphicon-user"></span><p>用户</p></div>
+					<div class="sliderItems"><span class="glyphicon glyphicon-unchecked"></span><p>罐体</p></div>
+					<div class="sliderItems"><span class="glyphicon glyphicon-copyright-mark"></span><p>罐体数据</p></div>
+					<div class="sliderItems"><span class="glyphicon glyphicon-leaf"></span><p>干细胞</p></div>
+					<div class="sliderItems"><span class="glyphicon glyphicon-thumbs-up"></span><p>社区</p></div>
+					<div class="sliderItems"><span class="glyphicon glyphicon-off"></span><p ondblclick="exitBtn1();">双击退出</p></div>
+				</div>
+			</div>
+			<div class="col-lg-10 col-md-9 col-sm-10 contentBox">
+				<div class="content">
+					<div class="title"><p>万海生命银行</p></div>
+					<div class="cont row">
+						<div class="col-lg-9 col-sm-7">
+							<div class="dataTableBox">
+								<h5>用户列表</h5>
+			                    <table id='userDataTable'>
+			                        <thead>
+							            <tr>
+							                <th>用户编号</th>
+							                <th>用户名</th>
+							                <!-- <th>用户密码</th> -->
+							                <th>用户电话</th>
+							                <th>时间</th>
+							            </tr>
+							        </thead>
+							        <tfoot>
+							            <tr>
+							                <th>用户编号</th>
+							                <th>用户名</th>
+							                <!-- <th>用户密码</th> -->
+							                <th>用户电话</th>
+							                <th>时间</th>
+							            </tr>
+							        </tfoot>
+							        <tbody>
+							        	<tr></tr>
+							        	<tr></tr>
+							        	<tr></tr>
+							        	<tr></tr>
+							        	<tr></tr>
+							        	<tr></tr>
+							        	<tr></tr>
+							        	<tr></tr>
+							        	<tr></tr>
+							        	<tr></tr>
+							        	<tr></tr>
+							        	<tr></tr>
+							        	<tr></tr>
+							        	<tr></tr>
+							        	<tr></tr>
+							        </tbody>
+			                    </table>
+			                    <div class="jqueryPage" id="userTablePage"></div>
+			               	</div>
+			            </div>
+			            <div class="col-lg-3 col-sm-5">
+			            	<form class="slick-login" id="userForm">
+								<input type="text" name="username" placeholder="用户名">
+				        		<input type="text" name="phone" placeholder="电话">
+				        		<a class="btn btn-info submitBtn" id="userBtn">添加</a>
+				   		 	</form>
+
+				   		 	<form class="slick-login" id="userForm1">
+								<input type="text" name="id" placeholder="输入编号指定用户">
+				        		<a class="btn btn-info submitBtn" id="userBtn1">删除</a>
+				   		 	</form>
+			            </div>
+					</div>
+				</div>
+				<div class="content">
+					<div class="title"><p>万海生命银行</p></div>
+					<div class="row cont">
+						<div class="col-lg-9 col-sm-7">
+							<div class="dataTableBox">
+								<h5>罐体列表</h5>
+			                    <table id='dataBoxTable'>
+			                        <thead>
+			                            <tr>
+			                                <th>编号</th>
+			                                <th>地址</th>
+			                                <th>序列号</th>
+			                            </tr>
+			                        </thead>
+			                        <tfoot>
+			                            <tr>
+			                               	<th>编号</th>
+			                                <th>地址</th>
+			                                <th>序列号</th>
+			                            </tr>
+			                        </tfoot>
+			                        <tbody>
+			                        	<tr></tr>
+			                        	<tr></tr>
+			                        	<tr></tr>
+			                        	<tr></tr>
+			                        	<tr></tr>
+			                        	<tr></tr>
+			                        	<tr></tr>
+			                        	<tr></tr>
+			                        	<tr></tr>
+			                        	<tr></tr>
+			                        	<tr></tr>
+			                        	<tr></tr>
+			                        	<tr></tr>
+			                        	<tr></tr>
+			                        	<tr></tr>
+			                        </tbody>
+			                    </table>
+			                    <div class="jqueryPage" id="dataBoxPage">
+								</div>
+			               	</div>                
+			            </div>
+			            <div class="col-lg-3 col-sm-5">
+			            	<form class="slick-login" id="dataBoxForm">
+			                    <input type="text" name="address" placeholder="地址">
+			                    <input type="text" name="serial" placeholder="序列号">
+			                    <a class="btn btn-info submitBtn" id="dataBoxBtn">添加</a>
+			                </form>
+			                <form class="slick-login" id="dataBoxForm1">
+			                    <input type="text" name="canid" placeholder="编号">
+			                    <a class="btn btn-info submitBtn" id="dataBoxBtn1">删除</a>
+			                </form>
+			                <form class="slick-login" id="dataBoxForm2">
+			                    <input type="text" name="canid" placeholder="编号">
+			                    <input type="text" name="address" placeholder="地址">
+			                    <input type="text" name="serial" placeholder="序列号">
+			                    <a class="btn btn-info submitBtn" id="dataBoxBtn2">修改</a>
+			                </form>
+			            </div>
+					</div>
+				</div>
+				<div class="content">
+					<div class="title"><p>万海生命银行</p></div>				
+					<div class="row cont">
+						<div class="col-lg-9 col-sm-7">
+							<div class="dataTableBox">
+								<form id='dateForm'>
+									<label>请确保时间顺序正确：</label>
+									<input id='mydatepicker1' class="dateInput" type='text' placeholder="起始时间" name='start_time'/>
+									<input id='mydatepicker2' class="dateInput" type='text' placeholder="结束时间" name='end_time'/>
+									<a href="##" class="btn btn-info" id="dateBtn">确定</a>
+								</form>						
+								<h5>1:罐内温度高报警 2:罐内温度超高报警 3:液位低报警 4:罐体顶部温度 5:液氮罐液位 6:液位高报警</h5>
+			                    <table id='proDataTable'>
+			                        <thead>
+			                            <tr>
+			                                <th>编号</th>
+			                                <th>记录时间</th>
+			                                <th>1</th>
+			                                <th>2</th>
+			                                <th>T1</th>
+			                                <th>T2</th>
+			                                <th>T3</th>
+			                                <th>T4</th>                                
+			                                <th>样品温度</th>
+			                                <th>3</th>
+			                                <th>4</th>
+			                                <th>5</th>
+			                                <th>6</th>
+			                                <th>地点</th>
+			                            </tr>
+			                        </thead>
+			                        <tfoot>
+			                            <tr>
+			                                <th>编号</th>
+			                                <th>记录时间</th>
+			                                <th>1</th>
+			                                <th>2</th>
+			                                <th>T1</th>
+			                                <th>T2</th>
+			                                <th>T3</th>
+			                                <th>T4</th>                                
+			                                <th>样品温度</th>
+			                                <th>3</th>
+			                                <th>4</th>
+			                                <th>5</th>
+			                                <th>6</th>
+			                                <th>地点</th>
+			                            </tr>
+			                        </tfoot>
+			                        <tbody>
+			                        	<tr></tr>
+			                        	<tr></tr>
+			                        	<tr></tr>
+			                        	<tr></tr>
+			                        	<tr></tr>
+			                        	<tr></tr>
+			                        	<tr></tr>
+			                        	<tr></tr>
+			                        	<tr></tr>
+			                        	<tr></tr>
+			                        	<tr></tr>
+			                        	<tr></tr>
+			                        	<tr></tr>
+			                        	<tr></tr>
+			                        	<tr></tr>
+			                        </tbody>
+			                    </table>
+			                    <div class="jqueryPage" id="jqueryPage">
+								</div>
+			               	</div>                
+			            </div>
+			            <div class="col-lg-3 col-sm-5">
+			                <form class="slick-login" id="dateForm1">
+								<h5 style="color:#333;">请确保时间顺序正确</h5>
+			                    <input id='mydatepicker3' type='text' placeholder="起始时间" name='start_time'/>
+			                    <input id='mydatepicker4' type='text' placeholder="结束时间" name='end_time'/>
+			                    <a class="btn btn-info submitBtn" id="dateBtn1">删除</a>
+			                </form>
+			            </div>
+					</div>
+				</div>
+				<div class="content">
+					<div class="title"><p>万海生命银行</p></div>
+					<div class="row cont">
+						<div class="col-lg-9 col-sm-7">
+							<div class="dataTableBox">
+								<h5>用户细胞列表</h5>
+			                    <table id='cellTable'>
+			                        <thead>
+			                            <tr>
+			                                <th>细胞id</th>
+			                                <th>用户名</th>
+			                                <th>用户手机</th>
+			                                <th>细胞名称</th>
+			                                <th>细胞数目</th>
+			                                <th>所在罐体序列号</th>
+			                                <th>存储时间</th>
+			                            </tr>
+			                        </thead>
+			                        <tfoot>
+			                            <tr>
+			                               <th>细胞id</th>
+			                                <th>用户名</th>
+			                                <th>用户手机</th>
+			                                <th>细胞名称</th>
+			                                <th>细胞数目</th>
+			                                <th>所在罐体序列号</th>
+			                                <th>存储时间</th>
+			                            </tr>
+			                        </tfoot>
+			                        <tbody>
+			                        	<tr></tr>
+			                        	<tr></tr>
+			                        	<tr></tr>
+			                        	<tr></tr>
+			                        	<tr></tr>
+			                        	<tr></tr>
+			                        	<tr></tr>
+			                        	<tr></tr>
+			                        	<tr></tr>
+			                        	<tr></tr>
+			                        	<tr></tr>
+			                        	<tr></tr>
+			                        	<tr></tr>
+			                        	<tr></tr>
+			                        	<tr></tr>
+			                        </tbody>
+			                    </table>
+			                    <div class="jqueryPage" id="cellPage">
+								</div>
+			               	</div>                
+			            </div>
+			            <div class="col-lg-3 col-sm-5">
+			            	<form class="slick-login" id="cellForm">
+			                    <input type="text" name="phone" placeholder="电话">
+			                    <input type="text" name="name" placeholder="姓名">
+			                    <input type="text" name="num" placeholder="细胞数">
+			                    <input type="text" name="serial" placeholder="系列号">
+			                    <a class="btn btn-info submitBtn" id="cellBtn">添加</a>
+			                </form>
+			                <form class="slick-login" id="cellForm1">
+			                    <input type="text" name="cellid" placeholder="细胞id">
+			                    <a class="btn btn-info submitBtn" id="cellBtn1">删除</a>
+			                </form>
+			            </div>
+					</div>
+				</div>
+				<div class="content">
+					<div class="title"><p>万海生命银行</p></div>
+					<div class="row">
+						<div class="col-lg-12 cont topicCont">
+							<ul class="topic" id="topic">
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="assetsTb/jquery.min.js"></script>
+    <script src="assetsTb/bootstrap/js/bootstrap.min.js"></script>
+    <!-- 分页插件 -->
+    <script src="js/jqueryPage.js"></script>
+	<!-- 登录 -->
+	<script src="js/login.js"></script>
+	<!-- 用户表格内容写入 -->
+	<script src="js/userTable.js"></script>
+	<!-- 用户的增删改查 -->
+	<script src="js/userSubmit.js"></script>
+	<!-- 罐体表格写入 -->
+	<script src="js/dataBox.js"></script>
+	<!-- 罐体的增删改查 -->
+	<script src="js/dataBoxSubmit.js"></script>
+	<!-- 罐体表格写入 -->
+	<script src="js/cellHistory.js"></script>
+	<!-- 罐体的增删改查 -->
+	<script src="js/cellSubmit.js"></script>
+	<!-- 细胞列表表格写入 -->
+	<script src="js/cellTable.js"></script>
+	<!-- 细胞列表的增删改查 -->
+	<script src="js/cellHistorySubmit.js"></script>
+	<!-- 话题的写入 -->
+	<script src="js/topic.js"></script>
+	<!-- 界面切换 -->
+	<script src="js/nav.js"></script>
+	<script type="text/javascript" src="date/js/dcalendar.picker.js"></script>
+	<script>
+		$(document).ready(function(){
+			for(var i=1;i<5;i++){
+				$('#mydatepicker'+i).dcalendarpicker({
+					format:'yyyy-mm-dd'
+				}); 
+			}
+		});
+	</script>
+</body>
+</html>

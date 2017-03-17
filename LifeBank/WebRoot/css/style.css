@@ -1,0 +1,155 @@
+*{
+	padding:0;
+	margin:0;
+}
+body{
+	font-family: 微软雅黑;
+	background: url('../img/bg.jpg') repeat-y !important;
+	background-size:100% !important;
+	color: #fff;
+}
+.title{
+	width: 100%;
+	height: 60px;
+	/*background: blue;*/
+	margin:0;
+}
+.title>p{
+	line-height: 60px;
+	font-size: 30px;
+	text-align: center;
+}
+.navBox{
+	height: 1200px;
+}
+.header{
+	width:100%;
+	height:60px;
+	cursor: pointer;
+	background:  #104E8B;
+	font-size: 20px;
+	color: #fff;
+	line-height: 60px;
+	text-align:center;
+}
+.header:active{
+	background: #4F94CD;
+	color: #fff;
+}
+.sliderBar{
+	background:#4F94CD;
+	width: 70%;
+	height:100%;
+	box-shadow:0 0 10px #333；
+}
+.sliderBarToggle{
+	width: 25%;
+}
+.sliderItems{
+	width:100%;
+	height:50px;
+	font-size: 18px;
+	color: #fff;
+	line-height: 50px;
+	text-align: center;
+	cursor: pointer;
+}
+.sliderItems>p{
+	float: left;
+	line-height: 50px;
+	text-align: center;
+	margin:0;
+}
+.sliderItems>span{
+	float: left;
+	line-height:50px;
+	text-align: center;
+	margin:0 15px; 
+}
+.Aactive{
+ 	background:#ADD8E6;
+ 	color: #303030 !important; 
+}
+.sliderItems:hover{
+	background:#ADD8E6;
+ 	color: #303030; 
+}
+.dataTableBox{
+	background: #4F94CD;
+	height:700px;
+	width: 100%;
+	padding: 15px;
+	margin:0;
+	border-radius: 5px;
+	overflow: scroll;
+	color: #fff;
+}
+.dataTableBox>table>tbody>tr:hover{
+	background: #ADD8E6;
+	color: #333;
+}
+.dateInput{
+	height: 30px;
+	width: 150px;
+	text-align: center;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-o-border-radius: 5px;
+}
+#userDataTable,
+#dataBoxTable,
+#proDataTable,
+#cellTable{
+	text-align: center;
+	width: 100%;
+	height: 520px;
+	border-radius: 5px;
+}
+#proDataTable{
+	width: 1500px;
+}
+@media only screen and (max-width:1500px){
+    /* styles for browsers larger than 960px; */
+   #userDataTable,
+	#cellTable{		
+		width: 800px;
+	}
+}
+#proDataTable>thead>tr>th,
+#userDataTable>thead>tr>th,
+#dataBoxTable>thead>tr>th,
+#cellTable>thead>tr>th{
+	padding: 5px 15px;
+	height: 25px;
+	text-align: center;
+	background-color:#104E8B;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	-o-border-radius:5px; 
+}
+
+#proDataTable>tfoot>tr>th,
+#userDataTable>tfoot>tr>th,
+#dataBoxTable>tfoot>tr>th,
+#cellTable>tfoot>tr>th{
+	padding: 5px 15px;
+	height: 25px;
+	text-align: center;
+	background-color:#104E8B;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	-o-border-radius:5px; 
+}
+
+#proDataTable>tbody>tr>td,
+#userDataTable>tbody>tr>td,
+#dataBoxTable>tbody>tr>td,
+#cellTable>tbody>tr>td{
+	/*padding: 5px 15px;*/
+	height: 25px;
+	text-align: center;
+}
+.pager{height:30px;line-height:30px;font-size: 12px;margin: 25px 0px;text-align: center;color: #2E6AB1;overflow: hidden;}
+.pager a{border:1px solid #9AAFE5;color:#2E6AB1;margin:0px 5px;padding:5px 8px;text-decoration: none;}
+.pager a.hover,.pager a.active{background-color:#2E6AB1;border-color:#000080;color:#FFF;}
+.pager a.disabled{color:#C8CDD2;cursor:auto;}
